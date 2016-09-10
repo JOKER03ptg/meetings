@@ -1,0 +1,447 @@
+2016-09-10 17:07:54	+Karkus[m]	I am here
+2016-09-10 17:08:49	+Tobbi	Great.
+2016-09-10 17:08:55	+Tobbi	Oh, yeah, we should|ve started 8 minutes ago.
+2016-09-10 17:09:13	+mteufel[m]	Indeed.
+2016-09-10 17:09:28	+mt	!meetingstart
+2016-09-10 17:09:35	-->	Karkus [Karkus] (realname) (~Karkus476@supertux/Karkus) has joined #supertux
+2016-09-10 17:09:35	-i-	Mode #supertux [+v Karkus] by ChanServ
+2016-09-10 17:09:41	+mt	which of course still doesn't do anything
+2016-09-10 17:09:51	+christ2go[m]	Are those commands just for the log or real?
+2016-09-10 17:10:06	+christ2go[m]	like actually doing something?
+2016-09-10 17:10:07	+Karkus	We need a meeting logger and vote bot :D
+2016-09-10 17:10:17	+mt	christ2go[m]: for the log. I have a text log. If I care enough, then I can write a parser for it
+2016-09-10 17:11:09	+mt	okay, let's start with the first point
+2016-09-10 17:11:22	+mt	!discussion Anything left for 0.5.0
+2016-09-10 17:11:47	+christ2go[m]	The scripting reveal stuff should be merged
+2016-09-10 17:11:51	+mt	We can see the main stuff about that at https://github.com/SuperTux/supertux/milestone/5
+2016-09-10 17:12:15	+Tobbi	Scripting reveal?
+2016-09-10 17:12:20	+mt	I think christ2go[m] is talking about the ExposedObject template PR
+2016-09-10 17:12:27	+Tobbi	You mean my PR for the unexpose object template class?
+2016-09-10 17:12:34	+christ2go[m]	Yeah, ... forgot what it was called
+2016-09-10 17:12:48	+Tobbi	IMO, we can. This doesn't change a thing.
+2016-09-10 17:12:50	+Karkus	And maths22's issues
+2016-09-10 17:12:55	+Tobbi	Not for end users anyway.
+2016-09-10 17:13:00	+mt	tobbi: we can. can you resolve the merge conflicts?
+2016-09-10 17:13:04	+Tobbi	sure.
+2016-09-10 17:13:06	+Tobbi	one moment.
+2016-09-10 17:14:39	-->	lumidify [lumidify] (Lumidify Productions) (~lumidify@unaffiliated/lumidify) has joined #supertux
+2016-09-10 17:14:45	+Karkus	Anything else which we think needs completing before 0.5?
+2016-09-10 17:15:22	+mt	Karkus: maths22's issues
+2016-09-10 17:15:26	+mt	as you mentioned
+2016-09-10 17:15:39	+Karkus	And then we're absolutely ready?
+2016-09-10 17:15:43	+mt	I'd prefer to have them done *BEFORE* the next release candidate
+2016-09-10 17:15:58	+Karkus	mt: We are having a next release candidate?
+2016-09-10 17:16:09	+mt	Because then on the release of the candidate, we can test this
+2016-09-10 17:16:29	+mt	Karkus: it is a release candidate
+2016-09-10 17:16:41	+Karkus	mt: Okay.
+2016-09-10 17:16:57	+mt	ideally, after a release candidate, nothing, except for the version number needs to be changed
+2016-09-10 17:17:08	+Tobbi	I would say we need another RC for translators to test out their translations, right?
+2016-09-10 17:17:20	+Karkus	release candidate 4, and then a final 0.5 release.
+2016-09-10 17:17:27	+Tobbi	Sounds good.
+2016-09-10 17:17:42	+Karkus	TODO: maths22's issues.
+2016-09-10 17:17:45	+mt	maybe also rc 5 depending if new issues are reported and fixed after the release of rc 4
+2016-09-10 17:18:05	+Karkus	Any possible complications which might happen during release, which we can forsee?
+2016-09-10 17:18:13	+christ2go[m]	mt: So ideally one rc should be "new issue free"
+2016-09-10 17:18:18	+Tobbi	Yes, people will complain.
+2016-09-10 17:18:20	+Tobbi	That|s an issue.
+2016-09-10 17:18:21	+Tobbi	:P
+2016-09-10 17:18:22	+mt	christ2go[m]: Yes
+2016-09-10 17:18:37	+mt	christ2go[m]: just read the term release candidate literally
+2016-09-10 17:18:52	+mt	it is a proposal for a release
+2016-09-10 17:19:25	+mt	just think of it like a casting
+2016-09-10 17:19:32	+tobbi[m]	DSDS.
+2016-09-10 17:19:34	+mt	you have release candidates
+2016-09-10 17:19:44	+mt	and at the end of the casting, you will have a release
+2016-09-10 17:19:52	+mt	and other candidates get discarded
+2016-09-10 17:20:07	<--	lumidify (~lumidify@unaffiliated/lumidify) has quit (Quit: Leaving)
+2016-09-10 17:20:16	+mt	okay
+2016-09-10 17:20:34	+mt	the translation stuff is also all handled
+2016-09-10 17:21:47	+mt	and we will all put on our todo list for a string freeze that we should remember to update all submodules that contain strings before the freeze
+2016-09-10 17:21:52	+mt	because   > credits.stxt: again, fix @serano01's name on his request
+2016-09-10 17:21:57	+mt	this is still pending
+2016-09-10 17:22:07	+mt	but luckily, names are not translatable
+2016-09-10 17:22:33	+Tobbi	Yes, but also unfortunately, because our Latin translator did complain about that.
+2016-09-10 17:22:35	+mt	so we can still update the submodule
+2016-09-10 17:23:03	+christ2go[m]	Latin translater? (Or are you joking)
+2016-09-10 17:23:10	+mt	(no he isn't)
+2016-09-10 17:23:11	+Tobbi	I am not. SuperTux is available in Latin
+2016-09-10 17:23:20	+Tobbi	s/is/will be?
+2016-09-10 17:23:34	+mt	!discussionend
+2016-09-10 17:23:46	+mt	!discussion Setting up a regular meeting schedule
+2016-09-10 17:24:02	+mt	Okay
+2016-09-10 17:24:03	+Tobbi	Sounds good. Not sure if I can attend, though.
+2016-09-10 17:24:10	+Karkus	Firstly, regularity
+2016-09-10 17:24:14	+Karkus	How often?
+2016-09-10 17:24:17	+christ2go[m]	How often? When?
+2016-09-10 17:24:19	+mt	at least monthly
+2016-09-10 17:24:29	+mt	is that okay?
+2016-09-10 17:24:39	+Tobbi	Yup.
+2016-09-10 17:24:44	+Karkus	mt: That sounds good.
+2016-09-10 17:24:50	+christ2go[m]	(Sorry) twice or once a month, not more often but not less than once a month
+2016-09-10 17:25:37	+mt	I do agree about the not less than once a month, that's also why I wrote at least
+2016-09-10 17:25:46	+Tobbi	Uhm, mt: We already announced string freeze...
+2016-09-10 17:25:57	+Tobbi	re your comment.
+2016-09-10 17:26:03	+Tobbi	reminder to update all string-containing submodules that need to be included in the release, before string freeze
+2016-09-10 17:26:05	+mt	Tobbi: it's a reminder for the next releases
+2016-09-10 17:26:09	+Tobbi	Oh okay.
+2016-09-10 17:26:10	+Tobbi	Good.
+2016-09-10 17:26:15	+christ2go[m]	Just say once a month, if a second meeting will be needed it can be planned in the first one
+2016-09-10 17:26:40	+mt	because if we don't write it down, then we don't learn from it, I guess
+2016-09-10 17:26:55	+Tobbi	true.
+2016-09-10 17:26:57	+mt	christ2go[m]: well, my comment was that I didn't like to say 'not more often'
+2016-09-10 17:27:05	+mt	(but tobbi interrupted me)
+2016-09-10 17:27:28	+mt	because I wouldn't mind small, short meetings about small decisions made by the responsible people
+2016-09-10 17:28:33	+mt	these small meetings aren't supposed to be attended by all developers, while the regular meetings often would be
+2016-09-10 17:28:42	+christ2go[m]	Ah ok... I'd say that meetings should be attentede by as many as possible, that's why I opted for the not more often ... I didn't mean it like "never do that" jus that they shouldn't be planned more often, so that everyone has a chanche to attend
+2016-09-10 17:29:04	+christ2go[m]	Sorry didn't see your comment, then my critic is irrelevant (because of the not all part)
+2016-09-10 17:29:31	+Karkus	Do we mean monthly as in calender month?
+2016-09-10 17:29:32	+mt	christ2go[m]: well these decisions would be really small decisions and I think it's better to have approval by one or two people at some defined point
+2016-09-10 17:29:44	+Karkus	Or shall we just have one at the same time every 4 weeks?
+2016-09-10 17:29:55	+mt	rather than making a decision yourself and committing some stuff
+2016-09-10 17:30:20	+christ2go[m]	yeah, but don't we already make such discussions in the issues?
+2016-09-10 17:30:21	+mt	karkus: the large regular meeting should be on a certain day
+2016-09-10 17:30:36	+mt	christ2go[m]: issues are spread over, and it's hard to find one of them
+2016-09-10 17:30:42	+mt	about a certain problem
+2016-09-10 17:30:59	+Karkus	christ2go[m]: We do, but they aren't focussed, extensive or decisive enough
+2016-09-10 17:31:31	+christ2go[m]	Ok one big meeting (monthly?) and some small more regularly (weekly?)
+2016-09-10 17:32:32	+Karkus	I don't see much advantage to small ones, on the scale we are working at. We should add things to be discussed to the meetings repo, and read through the list as we go.
+2016-09-10 17:32:40	+mt	christ2go[m]: see -internal
+2016-09-10 17:32:41	+Karkus	*time scale
+2016-09-10 17:32:59	+christ2go[m]	ok
+2016-09-10 17:33:05	+mt	karkus: well, I think sometimes meetings are better than discussing via issues
+2016-09-10 17:33:14	+mt	because talking is much more effective
+2016-09-10 17:33:26	+mt	and you don't spam 40 people's inboxes
+2016-09-10 17:33:44	+Karkus	mt: That's what I just said.
+2016-09-10 17:33:47	+mt	okay, when
+2016-09-10 17:34:01	+christ2go[m]	Weekends
+2016-09-10 17:34:05	+Karkus	Meetings are more focussed, extensive and decisive
+2016-09-10 17:34:16	+mt	karkus: oops, I meant christ2go[m]
+2016-09-10 17:34:23	+mt	christ2go[m]: right. weekends
+2016-09-10 17:34:29	+Karkus	Same time as this, every 4 weeks.
+2016-09-10 17:34:52	+mt	I already proposed, Saturdays, 15:00 to maximum 19:00 UTC
+2016-09-10 17:34:54	+christ2go[m]	sounds good
+2016-09-10 17:35:15	+mt	Saturdays: because it's not a workday, and it's not the day before a workday
+2016-09-10 17:35:36	+Tobbi	But the day after one where people need to relax >P
+2016-09-10 17:35:47	+Karkus	See internal, mt.
+2016-09-10 17:35:50	+mt	that means if people have to stay up late due to the time zone, they can sleep longer on the next day
+2016-09-10 17:36:24	+mt	do we agree on saturdays for above mentioned reasons?
+2016-09-10 17:36:34	+Tobbi	Yeah, we do.
+2016-09-10 17:36:39	+Karkus	yep.
+2016-09-10 17:38:10	+christ2go[m]	ok
+2016-09-10 17:38:15	+Tobbi	Okay, guys, I caused a regression, I think.
+2016-09-10 17:38:45	+Tobbi	(just on a side note)
+2016-09-10 17:38:47	+mt	tobbi later
+2016-09-10 17:38:51	+Tobbi	sure.
+2016-09-10 17:39:34	+mt	!vote regular meeting on Saturday: first saturday in month (so there's enough time to schedule more regular meetings that month)
+2016-09-10 17:39:46	+Tobbi	+1
+2016-09-10 17:39:49	+mt	+1
+2016-09-10 17:39:51	+Karkus	vote no. vote every 4 weeks.
+2016-09-10 17:40:12	+mt	Karkus: that is about every 4 weeks
+2016-09-10 17:40:16	+Karkus	I don't think "first saturday every month" is particularly good.
+2016-09-10 17:40:28	+mt	and we'd have to keep track of when 4 weeks expire then.
+2016-09-10 17:40:41	+christ2go[m]	+1
+2016-09-10 17:40:47	+Karkus	mt: What if saturday is the 1st?
+2016-09-10 17:40:52	+Karkus	Then we'd all miss it.
+2016-09-10 17:41:15	+mt	I usually notice when a month changes
+2016-09-10 17:41:21	+Karkus	mt: Four weeks is easy to keep track of, as long as you haven't lost 6 fingers.
+2016-09-10 17:41:27	+Karkus	>6*
+2016-09-10 17:42:03	+Karkus	I'm not trying to be a pain here. If you all think that'd be easier, that's fine.
+2016-09-10 17:42:40	+christ2go[m]	Once a month is easier to remember than having to count 4 weeks all the time
+2016-09-10 17:43:02	+mt	well Karkus you can vote -1 now I guess
+2016-09-10 17:43:08	+mt	We have discussed this
+2016-09-10 17:43:10	+Karkus	-1
+2016-09-10 17:43:20	+mt	and anyone who wants to change their opinion can use -1 now too
+2016-09-10 17:43:26	+mt	but I don't plan on doing so
+2016-09-10 17:43:39	+Tobbi	I change my vote to 0 because I don|t really care.
+2016-09-10 17:43:44	+Tobbi	I will have to see whether I can attend in any case.
+2016-09-10 17:43:46	+Karkus	Is that allowed?
+2016-09-10 17:44:05	+mt	yes
+2016-09-10 17:44:48	+Karkus	Okay, so the result for that ended up as +1 right?
+2016-09-10 17:45:22	+mt	+1: christ2go[m], me; 0: Tobbi; Karkus: -1
+2016-09-10 17:45:24	+christ2go[m]	Yes ( karkus; -1 , tobbi 0, mt,christ2go +1)
+2016-09-10 17:45:32	+mt	So +2
+2016-09-10 17:45:49	+Karkus	2 -1 +/- 0 = 1
+2016-09-10 17:45:51	+mt	but we can reconsider it for the next meeting
+2016-09-10 17:46:08	+mt	because +1, or +2
+2016-09-10 17:46:13	+mt	is not really important
+2016-09-10 17:46:15	+Karkus	In four week's time. I mean, a month
+2016-09-10 17:46:36	+mt	then I suppose we schedule the next month's meeting for the first saturday in october
+2016-09-10 17:46:42	+mt	and will reconsider this idea
+2016-09-10 17:46:53	+Karkus	Okay.
+2016-09-10 17:47:34	+Karkus	end of discussion?
+2016-09-10 17:47:39	+mt	no time
+2016-09-10 17:47:46	+mt	15:00 - 19:00 UTC
+2016-09-10 17:48:02	+christ2go[m]	+1
+2016-09-10 17:48:02	+Karkus	15:00 to 17:00 or later.
+2016-09-10 17:48:18	+mt	because it works for everyone (Europe: afternoon/evening, Americas: morning, Australia: night, but weekend)
+2016-09-10 17:48:34	+mt	Karkus: I'd keep that as a general timespan
+2016-09-10 17:48:54	+Karkus	mt: A general timespan isn't very useful, imo.
+2016-09-10 17:48:55	+mt	so it can be 16:00 to 17;00 UTC, or 16:00 to 18:00 UTC or whatever we need
+2016-09-10 17:49:06	+mt	that's to be discussed at the previous meeting
+2016-09-10 17:49:30	+mt	and it will allow being flexible in case on attendee can't attend later or earlier the day
+2016-09-10 17:49:39	+mt	*one
+2016-09-10 17:50:06	+Karkus	Well, +1 for flexibility, -1 for inconsistent schedule.
+2016-09-10 17:50:34	+christ2go[m]	0
+2016-09-10 17:50:34	+mt	Karkus: I think it's much better than the very incosistent meetings right now
+2016-09-10 17:50:43	+Karkus	mt: Absolutely.
+2016-09-10 17:50:58	+Karkus	I vote 0 for the time, but I am absolutely okay with it.
+2016-09-10 17:51:06	+mt	I'd suggest we agree on that now
+2016-09-10 17:51:14	+mt	until someone comes up with a better solution
+2016-09-10 17:51:48	+mt	because saying: on the first saturday of a month, you, as a supertux dev, must attend to that meeting from 15:00 - 17:00 UTC isn't nice
+2016-09-10 17:52:09	+Karkus	*darf, not muss
+2016-09-10 17:52:16	+christ2go[m]	* sollte
+2016-09-10 17:52:23	+christ2go[m]	**sollte
+2016-09-10 17:52:25	+mt	should, if that makes you happier
+2016-09-10 17:52:32	+Karkus	christ2go: Precisely.
+2016-09-10 17:52:38	+mt	but it would be very nice
+2016-09-10 17:52:56	+mt	if all developers could at least have a chance to attend by being flexible with that
+2016-09-10 17:53:29	+Karkus	mt: If we can't all attend at the same time, it would be a pretty rubbish meeting.
+2016-09-10 17:53:33	+mt	it's not nice either if it's a rather important release meeting for example, and one dev can't attend until an hour earlier
+2016-09-10 17:53:38	+Karkus	And a 4 hour long discussion?
+2016-09-10 17:53:42	+Karkus	RIP logs
+2016-09-10 17:53:43	+mt	karkus: nope
+2016-09-10 17:53:49	+mt	you didn't understand that right
+2016-09-10 17:53:59	+mt	on the previous meeting, we discuss
+2016-09-10 17:54:03	+Karkus	mt: What have I misunderstood?
+2016-09-10 17:54:14	+mt	which hours of these hours in the 4 hour timespan is going to be used for the meeting
+2016-09-10 17:54:31	+mt	usually, it will be two out of these four hours
+2016-09-10 17:54:47	+Karkus	mt: Okay, fine. I vote 0, but whatever will get the most people to attend.
+2016-09-10 17:55:03	+mt	right whatever will get the most people to attend
+2016-09-10 17:56:01	+Karkus	One point to consider is that, take tobbi for example, he might miss meeting X, and then have no idea when meeting X+1 is, so won't attend that either.
+2016-09-10 17:56:09	+Karkus	Or anyone.
+2016-09-10 17:56:19	+Karkus	But Tobbi said he might miss some
+2016-09-10 17:56:33	+christ2go[m]	Make meeting announcements in the meetingsa repo/ add them to the headline (when you join irc)
+2016-09-10 17:56:41	+mt	right
+2016-09-10 17:56:59	+mt	and the exact time could be changed after the meeting too, if there's urgent need for it
+2016-09-10 17:57:07	+Karkus	Also add a timeanddate.com countdown.
+2016-09-10 17:57:11	+mt	good
+2016-09-10 17:57:31	+Karkus	So that I don't have to use my time zone maths, which mt has firsthand experience of.
+2016-09-10 17:58:07	+mt	!discussionend
+2016-09-10 17:58:49	+mt	!discussion Issue #530, and its implementation
+2016-09-10 17:59:12	+mt	christ2go[m]: what do you have to say about it
+2016-09-10 17:59:21	+mt	and Karkus, why did you add it to the agenda?
+2016-09-10 18:00:20	+christ2go[m]	mt: Didn't you suggest to add it?
+2016-09-10 18:00:27	+Karkus	Well, we need to discuss what we will use it for
+2016-09-10 18:00:37	+Tobbi	I really don't know enough about squirrel to be able to give code input on that one.
+2016-09-10 18:00:41	+Tobbi	But sounds really nice.
+2016-09-10 18:00:44	+Karkus	Who has tested it?
+2016-09-10 18:00:56	+Karkus	I haven't because I didn't set up a test level.
+2016-09-10 18:01:11	+Karkus	Have you set one up yet, christ2go[m]?
+2016-09-10 18:01:16	+mteufel[m]	I haven't yet tested it either, but I will once we can consider merging it
+2016-09-10 18:01:40	+mteufel[m]	It's entirely pointless to do this now, since we first need to release 0.5 before we can consider merging it
+2016-09-10 18:01:52	+christ2go[m]	Me :D But that's not enough. Didn't know how to add a level for that, because I had no ideas where it coulod be used. Buit I'm currently using it for the inventory and there it works fine
+2016-09-10 18:02:36	+mt	So: what we will use it for, karkus
+2016-09-10 18:02:42	+Karkus	Okay. Can it be used from within levels? Or only on worldmaps?
+2016-09-10 18:02:56	+christ2go[m]	Both but storage is worldmap/profile local
+2016-09-10 18:03:07	+Karkus	mt: We could rewrite the keys on the forest worldmap
+2016-09-10 18:03:09	+mt	1) it can serve as a general abstraction for writing to a levelset/profile local location
+2016-09-10 18:03:27	+mt	so, that can be inventory, as well as scripts
+2016-09-10 18:03:37	+mt	it should be usable from both levels and worldmaps
+2016-09-10 18:03:37	+christ2go[m]	And C++ classes will be able to access it (or are but only in my storepowerup branch)
+2016-09-10 18:03:58	+Karkus	Okay.
+2016-09-10 18:03:59	+mt	and I don't care much what people use it for
+2016-09-10 18:04:09	+christ2go[m]	mt: It is, but the storage is worldmap/profile local
+2016-09-10 18:04:17	+Karkus	Could it be abused?
+2016-09-10 18:04:41	+Karkus	Could you make a script that would fill up the .sss with random information?
+2016-09-10 18:04:42	+mt	christ2go[m]: are you certain it is worldmap/profile local?
+2016-09-10 18:04:52	+mt	because what if a levelset uses two worldmaps
+2016-09-10 18:04:52	+christ2go[m]	You could save a lot of data ... And it lacks functionality to check if avariable is set, must add that
+2016-09-10 18:05:02	+mt	that need to access both the same information
+2016-09-10 18:05:10	+christ2go[m]	mt: Yeah, it's created whenever an *.,stsg is created
+2016-09-10 18:05:20	+mt	christ2go[m]: an stsg is per levelset
+2016-09-10 18:05:31	+mt	an stsg can contain information about multiple worldmaps
+2016-09-10 18:05:39	+Karkus	christ2go[m]: It needs to be impossible to abuse, since I as well as others often download from the forums etc.
+2016-09-10 18:05:44	+christ2go[m]	Ok sorry, didn't know about these technical terms
+2016-09-10 18:06:22	+mt	well making it sanitize input should be considered before merging it
+2016-09-10 18:06:42	+christ2go[m]	Karkus (IRC): Large data could currently be stored.
+2016-09-10 18:06:50	+mt	most importantly we need to prevent long-running scripts
+2016-09-10 18:06:52	+mt	e.g.
+2016-09-10 18:07:01	+Karkus	Okay. I think general consensus is; we aren't ready to discuss this, as most people haven't tested it.
+2016-09-10 18:07:02	+mt	i = 0
+2016-09-10 18:07:05	+mt	while True:
+2016-09-10 18:07:24	+christ2go[m]	mt: We can't really solve the halting problem
+2016-09-10 18:07:26	+mt	    write_data("key{}".format(i), "helllloooooooo")
+2016-09-10 18:07:32	+mt	    i += 1
+2016-09-10 18:07:43	+mt	# that would write full a disk
+2016-09-10 18:08:04	+mt	# so squirrel scripts should be stopped after running for whatever time
+2016-09-10 18:08:13	+Karkus	mt: Certainly.
+2016-09-10 18:08:23	+christ2go[m]	Maybe use a point system: Per level you get M (e.g. 10) storage points. When you save a integer it taks 1 satorage point, when you store a list it takes the sum of it's storage points
+2016-09-10 18:08:26	+Karkus	But to monitor them, they need to be in another thread.
+2016-09-10 18:08:32	+mt	but I think we don't need to discuss that now
+2016-09-10 18:08:46	+Karkus	When we are a) ready to merge (past 0.5) and b) people have tested, we can discuss further.
+2016-09-10 18:08:54	+mt	inded
+2016-09-10 18:08:58	+mt	*indeed
+2016-09-10 18:09:03	+mt	!discussionend
+2016-09-10 18:09:26	+mt	!discussion Issue #473, and its implementation
+2016-09-10 18:09:41	+mt	My opinion here is the same, discuss after 0.5 when this is ready to merge
+2016-09-10 18:10:11	+mt	Because if we rush to make decisions about that kind of stuff, we'll end up with stuff we don't want. Like the data module thing.
+2016-09-10 18:10:36	+christ2go[m]	Yeah, ... when they forest keys are implemented with it (I'll probalbly do that next week, I'm a bit stressed currently with school and stuff)
+2016-09-10 18:10:41	+mt	We discussed that as well, but we didn't test it, so we made a wrong decision there.
+2016-09-10 18:11:01	+Karkus	Well, now is an opportunity to discuss implementation, I guess.
+2016-09-10 18:11:12	+Karkus	If anyone has any comments, go ahead.
+2016-09-10 18:11:20	+Karkus	But I agree with mt otherwise.
+2016-09-10 18:11:23	+Karkus	Let's leave it.
+2016-09-10 18:11:33	+Karkus	My mistake to put it on the list.
+2016-09-10 18:11:39	+mt	It looks like no one has a point about that, right?
+2016-09-10 18:11:50	+Karkus	Yep.
+2016-09-10 18:12:12	+mt	!discussionend
+2016-09-10 18:12:23	+mt	!discussion Issue #499, for a vote
+2016-09-10 18:12:38	+christ2go[m]	mt: Adding tests (=googletests) for such things is hard, because the game needs to be loaded, might be worth to add a good debugging api to future
+2016-09-10 18:12:40	+mt	As you probably know, I already committed something that marks it as deprecated
+2016-09-10 18:12:56	+Karkus	mt: Yes, so this is being included in 0.5
+2016-09-10 18:13:10	+Karkus	As in, we are removing it.
+2016-09-10 18:13:17	+christ2go[m]	+1
+2016-09-10 18:13:21	+Karkus	No vote needed.
+2016-09-10 18:13:27	+Karkus	!discussionend
+2016-09-10 18:13:42	+mt	christ2go[m]: Aside from that being off-topic right now, debugging is a very different approach
+2016-09-10 18:14:01	+mt	unit tests are to make sure everything works without even running it
+2016-09-10 18:14:10	+Karkus	We can move those off-topic comments into their topic in the logs
+2016-09-10 18:14:10	+mt	so, it can be tested from a CI
+2016-09-10 18:14:39	+christ2go[m]	mt: I got confused with that ... it's ot anyway
+2016-09-10 18:14:53	+Karkus	!discussion Removing the data submodule
+2016-09-10 18:14:56	+mt	Karkus: "Removing the data submodule (implications, and a vote)" -> we're not ready to do this now anyway, so let's discuss it later?
+2016-09-10 18:15:10	+Karkus	mt: I think soon or never.
+2016-09-10 18:15:21	+mt	as a general fact, we should never discuss anything when we're not ready to do it
+2016-09-10 18:15:24	+Karkus	We can't let the task get any more difficult to achieve.
+2016-09-10 18:15:29	+Tobbi	People are gonna be very mad at us...
+2016-09-10 18:15:32	+Tobbi	Especially packagers.
+2016-09-10 18:15:35	+mt	we can do it, after a release
+2016-09-10 18:15:38	+mt	Tobbi: why?
+2016-09-10 18:16:05	+Karkus	mt: "ready to do it" is a silly thing to say. Why would we be "ready to do it", if we hadn't already discussed it?
+2016-09-10 18:17:01	+mt	Karkus: well I just think it's entirely pointless to do it now just before the release when we have a lot of different stuff to do
+2016-09-10 18:17:07	+mt	that is way more important
+2016-09-10 18:17:39	+Karkus	mt: five minutes ago we said that we didn't have much left for 0.5
+2016-09-10 18:17:46	+Karkus	I consider this an important decision.
+2016-09-10 18:17:57	+Karkus	We can discuss it in the next meeting, then.
+2016-09-10 18:17:57	+mt	Karkus: 0.5 is stressing anyway
+2016-09-10 18:18:03	+Karkus	Of course.
+2016-09-10 18:18:05	+mt	You have to remember this, and that
+2016-09-10 18:18:15	+mt	and you have to make sure stuff works
+2016-09-10 18:18:21	+Karkus	But we are not actually discussing that now.
+2016-09-10 18:18:25	+Karkus	Would you like to?
+2016-09-10 18:18:25	+mt	and making changes is totally stupid
+2016-09-10 18:18:36	+mt	you know
+2016-09-10 18:18:37	+Karkus	mt: Planning ahead is not stupid.
+2016-09-10 18:18:51	+mt	Karkus: planning isn't but there's not much to be planned
+2016-09-10 18:19:07	+Karkus	mt: Well, whether we are going to do it is a start
+2016-09-10 18:19:09	+mt	someone will submit a patch for re-integrating the data submodule, people will vote on it
+2016-09-10 18:19:23	+mt	and if we agree, it will land
+2016-09-10 18:19:44	+Karkus	mt: Then we must migrate all of the issues and pull requests
+2016-09-10 18:20:03	+Tobbi	Can't we actually add a git clone command to the cmake files instead?
+2016-09-10 18:20:18	+mt	We can just make the data submodule an empty repository with just information and issues
+2016-09-10 18:20:28	+mt	tobbi: no
+2016-09-10 18:20:31	+Tobbi	ok
+2016-09-10 18:20:37	+mt	that does not solve the point why we wanted to discuss this
+2016-09-10 18:20:46	+Tobbi	Which was?
+2016-09-10 18:20:55	+Tobbi	(sorry, I forgot)
+2016-09-10 18:20:58	+mt	working with a submodule or separate repository is a pain
+2016-09-10 18:21:17	+mt	because you always have to think about two repositories
+2016-09-10 18:21:55	+mt	!discussionend this is pointless now
+2016-09-10 18:22:13	+mt	!discussion Discuss the word "milestone" in regards to SuperTux milestone 1, milestone 2. Are we still using this? Our website uses it (see the downloads page).
+2016-09-10 18:22:31	+Karkus	moot point
+2016-09-10 18:22:41	+mt	tl;dr: we won't use milestone now
+2016-09-10 18:22:44	+Karkus	we have discussed this separately in irc
+2016-09-10 18:22:49	+mt	can we agree on using supertux-next
+2016-09-10 18:23:03	+Karkus	mt: future?
+2016-09-10 18:23:04	+mt	for the next release/next tasks in the future?
+2016-09-10 18:23:05	+Tobbi	Or just supertux as the executable name?
+2016-09-10 18:23:08	+Karkus	Like the milestone
+2016-09-10 18:23:09	+christ2go[m]	yeah
+2016-09-10 18:23:10	+Tobbi	Sure, for tasks, this is nice.
+2016-09-10 18:23:38	+mt	supertux2 stays because it's a clear distinction between the old and the new release series
+2016-09-10 18:23:48	+Tobbi	ok
+2016-09-10 18:23:49	+mt	and that is something where packagers might complain
+2016-09-10 18:23:57	+Tobbi	true
+2016-09-10 18:24:01	+Karkus	we have to keep that, unfortunately, I agree
+2016-09-10 18:24:08	+mt	because if you want supertux-0.1.3 and supertux-0.5.0-rc.3 on the same computer
+2016-09-10 18:24:29	+mt	then either they conflict, or you put them in different prefixes, or you assign them different names
+2016-09-10 18:24:32	+Karkus	Can you play milestone 1 levels on 0.5.0?
+2016-09-10 18:24:37	+mt	we already have done the latter
+2016-09-10 18:24:37	+tobbi[m]	Of course.
+2016-09-10 18:25:10	+Karkus	okay.
+2016-09-10 18:25:11	+mt	and let's face it
+2016-09-10 18:25:22	+mt	most players never see the name of the executable
+2016-09-10 18:25:31	+mt	so why change a running system
+2016-09-10 18:25:41	+christ2go[m]	true
+2016-09-10 18:25:54	+Karkus	mt: We don't really know what our userbase does, but I agree.
+2016-09-10 18:26:24	brmbrmcar	I see the executables
+2016-09-10 18:26:35	brmbrmcar	unless it is a standard install
+2016-09-10 18:26:43	brmbrmcar	in which case I just test
+2016-09-10 18:27:20	+Tobbi	Okay, guys, I gotta get going, talk to you later.
+2016-09-10 18:27:28	+Karkus	brmbrmcar: Have you been here the whole time?
+2016-09-10 18:27:30	+Tobbi	remind me to revert the jittering fix for it causes a bug.
+2016-09-10 18:27:35	+Karkus	Tobbi: See you later.
+2016-09-10 18:27:35	+mt	about Milestone 1/2 on the website
+2016-09-10 18:27:44	+mt	it needs to be converted to jekyll anyway
+2016-09-10 18:27:50	<--	Tobbi (~Tobbi@supertux/tobbi) has quit (Quit: My Mac has gone to sleep. ZZZzzz…)
+2016-09-10 18:27:59	+mt	so we can more easily update that
+2016-09-10 18:28:03	+mt	I started to work on it
+2016-09-10 18:28:04	+Karkus	And the Milestone 3 design document, which is just plain confusing.
+2016-09-10 18:28:15	+mt	but I'm often busy
+2016-09-10 18:31:02	+Karkus	Is that everything?
+2016-09-10 18:31:12	+mt	yes
+2016-09-10 18:31:20	+mt	!discussionend
+2016-09-10 18:31:29	+Karkus	Okay. That was a short meeting.
+2016-09-10 18:31:29	+mt	RustyBox[m], serano[m]; you there?
+2016-09-10 18:31:51	+mt	karkus: might talk a bit with the level design team if they're there
+2016-09-10 18:32:07	+mt	RustyBox probably isn't since he told us he wouldn't be available until sunday
+2016-09-10 18:32:17	+christ2go[m]	Karkus (IRC): Was that ironic?
+2016-09-10 18:32:29	+mt	christ2go[m]: we've had longer meetings already
+2016-09-10 18:32:51	+christ2go[m]	ok
+2016-09-10 18:33:02	+mt	anyway
+2016-09-10 18:33:13	+Karkus	christ2go[m]: It wasn't ironic, per se.
+2016-09-10 18:33:27	+Karkus	But no-one added to the list :(
+2016-09-10 18:33:31	+Karkus	!meetingend
+2016-09-10 18:33:40	+mt	karkus: nomeetingend
+2016-09-10 18:33:45	+Karkus	mt: ?
+2016-09-10 18:33:55	+mt	since krobonil submitted an almost final version of Bright Thunders
+2016-09-10 18:33:58	+Karkus	!meetingunend
+2016-09-10 18:34:09	+mt	now we can discuss if we need some more music
+2016-09-10 18:34:25	+Karkus	mt: You should have appended to the agenda
+2016-09-10 18:34:59	+mt	I only had that idea very late
+2016-09-10 18:35:11	+mt	and, you know, people's opinions change always anyway
+2016-09-10 18:35:16	+Karkus	Okay.
+2016-09-10 18:35:25	+mt	ideally I'd prefer to have meetings more often but in 45 minutes
+2016-09-10 18:35:44	+mt	we always need soooo much time
+2016-09-10 18:35:57	+mt	anyway, do we need more music?
+2016-09-10 18:35:58	+christ2go[m]	Voice meetings might make things go faster
+2016-09-10 18:36:00	+mt	Ghost Forest?
+2016-09-10 18:36:10	+mt	Ghost Forest Worldmap?
+2016-09-10 18:37:06	+Karkus	mt: Definitely for the worldmap, imo
+2016-09-10 18:37:18	+Karkus	Not sure about anything else.
+2016-09-10 18:37:49	+mt	okay
+2016-09-10 18:38:05	+mt	also, I had an idea about that island between antarctica and forest world
+2016-09-10 18:38:13	+Karkus	mt: Ooh, okay
+2016-09-10 18:38:15	+Karkus	I'm all ears
+2016-09-10 18:38:21	+mt	we had this idea about Glacier Island
+2016-09-10 18:38:26	+mt	but that's totally stupid
+2016-09-10 18:38:35	+Karkus	Right
+2016-09-10 18:38:36	+mt	Glaciers are rarely on islands
+2016-09-10 18:38:56	+mt	We could simply put a small mountain on it though
+2016-09-10 18:38:56	+Karkus	Well, everything is an island ;D
+2016-09-10 18:39:05	+Karkus	mt: We could.
+2016-09-10 18:39:10	+Karkus	That's not a bad idea
+2016-09-10 18:39:20	+mt	and because I also had that idea of putting a haunted house a la mario on it
+2016-09-10 18:39:35	+mt	I had a different idea, that's not directly stealing from mario
+2016-09-10 18:39:40	+mt	Haunted Mine
+2016-09-10 18:39:53	+Karkus	I like that idea.
+2016-09-10 18:39:57	+christ2go[m]	mt: A Spukschloss isn't that ghost forst (I put the translation just to make shure=
+2016-09-10 18:40:23	+mt	I already have a clear picture of how that could look, Karkus
+2016-09-10 18:40:40	+mt	christ2go[m]: mario has haunted houses and ships and so on in different worlds
+2016-09-10 18:40:57	+christ2go[m]	ok
+2016-09-10 18:41:32	+mt	it could... actually... also make at least partial use of the crystal cave tileset
+2016-09-10 18:41:41	+mt	which is never used in the main game yet
+2016-09-10 18:42:19	+christ2go[m]	That would be nice. 0.6 or future?
+2016-09-10 18:42:24	+mt	0.6
+2016-09-10 18:42:36	+mt	well, with the level team's changes
+2016-09-10 18:43:32	-i-	ChanServ has changed topic for #supertux from "Meeting: Today, 15:00 UTC, Issue #591 | https://github.com/SuperTux | Stable: 0.4.0 | Pre-release: 0.5.0-rc.3 | Nightlies: https://download.supertuxproject.org/ | World 2 Feedback: http://bit.ly/2bYaBWW | #supertux-notifications" to "https://github.com/SuperTux | Stable: 0.4.0 | Pre-release: 0.5.0-rc.3 | Nightlies: https://download.supertuxproject.org/ | World 2 Feedback: http://bit.ly/2bYaBWW | #supertux-notifications"
+2016-09-10 18:43:54	+mt	I suppose we can end the meeting now
+2016-09-10 18:44:00	+mt	christ2go[m], karkus?
+2016-09-10 18:44:15	+Karkus	Yup.
+2016-09-10 18:44:18	+christ2go[m]	ok
+2016-09-10 18:44:49	+mt	!meetingend
+2016-09-10 18:45:11	+mt	Thanks for attending
+2016-09-10 18:45:35	+Karkus	np
+2016-09-10 18:45:37	+Karkus	:D
+2016-09-10 18:45:47	+christ2go[m]	mt: Will you attach the log etc to github? (I'm kinda in the mood of writing a log parser)
+2016-09-10 18:45:56	+mt	christ2go[m]: I will
